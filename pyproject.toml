@@ -1,0 +1,8 @@
+[project]
+name = "storm_utils"
+version = "0.1.0"
+description = "Shared utilities for storm forecasting"
+dependencies = []
+
+[tool.setuptools]
+packages = ["storm_utils"]

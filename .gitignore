@@ -1,0 +1,36 @@
+cat > .gitignore <<'EOF'
+# Ignore figures directory
+figures/
+
+# Ignore build/dist/egg-info files
+storm_utils.egg-info/
+build/
+dist/
+
+# Ignore all files in shared_data but keep the folder itself
+shared_data/*
+!shared_data/.gitkeep
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter Notebook checkpoints
+notebooks/.ipynb_checkpoints/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+EOF
