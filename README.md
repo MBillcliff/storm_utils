@@ -16,14 +16,13 @@ git clone https://github.com/MBillcliff/storm_utils
 git clone https://github.com/University-of-Reading-Space-Science/HUXt
 git clone https://github.com/mathewjowens/HUXt_tools
 ```
-Clone either or both analysis repositories:
+Clone the storm_classification repository (optional):
 ```bash
 git clone https://github.com/MBillcliff/storm_classification
-git clone https://github.com/MBillcliff/storm_regression
 ```
 Note: storm_utils is intended to be installed as an editable package from each project environment (see usage instructions in the classification or regression repositories).
 
-All notebooks in storm_utils/notebooks/ are designed to be run from the environment of either [storm_classification](https://github.com/MBillcliff/storm_classification) or [storm_regression](https://github.com/MBillcliff/storm_regression). You do not need to create a separate environment for storm_utils.
+All notebooks in storm_utils/notebooks/ are designed to be run from the environment of either [storm_classification](https://github.com/MBillcliff/storm_classification). You do not need to create a seperate environment for storm_utils.
 
 ## Usage
 
@@ -34,6 +33,12 @@ Downloads solar wind and geomagnetic index data.
 
 [```ambient_huxt.ipynb```](https://github.com/MBillcliff/storm_utils/notebooks/ambient_huxt.ipynb)
 Runs ambient HUXt ensemble simulations and prepares HUXt ensemble output data for use in downstream ML pipelines.
+
+[```data_plots.ipynb```](https://github.com/MBillcliff/storm_utils/notebooks/data_plots.ipynb)
+Various data plots, including plotting metrics for model outputs.
+
+[```plot_combiner.ipynb```](https://github.com/MBillcliff/storm_utils/notebooks/plot_combiner.ipynb)
+Combines plots, and labels with desired labels. 
 
 
 ## Contact
