@@ -21,7 +21,7 @@ def get_project_paths(project_root=None):
         'huxt_tools': project_root / 'HUXt_tools',
         'storm_utils': project_root / 'storm_utils' / 'storm_utils',
         'storm_utils_figures': project_root / 'storm_utils' / 'figures',
-        'classification_src': project_root / 'storm_classification' / 'src',
+        'classification_src': project_root / 'storm_classification',
         'regression_src': project_root / 'storm_regression' / 'src',
         'data_shared': project_root / 'storm_utils' / 'shared_data',  # for shared output
         'huxt_data_shared': project_root / 'HUXt' / 'data' / 'HUXt',  # huxt output location

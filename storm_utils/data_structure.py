@@ -112,26 +112,20 @@ class ForecastingDataset(Dataset):
         max_strength = max_strength if max_strength is not None else np.inf
         return [idx for idx in subset_indices if min_strength <= self.max_targets[idx] <= max_strength]
 
-    def filter_indices_by_storm_strength(self, subset_indices, min_strength, max_strength=None, low_strength=4.66,):
-        '''given a set of indices for both storm and non-storm windows, returns indices where storm strength lies
-            between specified bounds. Also includes a random subset of non-storms equal in size to number of storms'''
+    def filter_indices_by_storm_strength(self, subset_indices, min_strength, max_strength=None):
+        '''given a set of indices for both storm and non-storm windows, returns all indices where storm strength lies
+            between specified bounds.'''
         
         max_strength = max_strength if max_strength is not None else np.inf
         subset_indices = np.array(subset_indices)
         labels = np.arange(len(subset_indices))
         strengths = np.array(self.max_targets)
-
         
         # Filter indices in the desired range
         in_range_mask = (strengths[subset_indices] >= min_strength) & (strengths[subset_indices] <= max_strength)
         in_range_indices = subset_indices[in_range_mask]
     
-        # Filter low-strength indices
-        low_strength_mask = strengths[subset_indices] < low_strength
-        low_strength_indices = subset_indices[low_strength_mask]
-    
-        # Combine and return
-        return sorted(np.concatenate([in_range_indices, low_strength_indices]))
+        return in_range_indices
 
 
     def filter_indices_by_storm_strength_and_balance(self, subset_indices, min_strength, max_strength=None, low_strength=4.66,):
@@ -142,7 +136,6 @@ class ForecastingDataset(Dataset):
         subset_indices = np.array(subset_indices)
         labels = np.arange(len(subset_indices))
         strengths = np.array(self.max_targets)
-
         
         # Filter indices in the desired range
         in_range_mask = (strengths[subset_indices] >= min_strength) & (strengths[subset_indices] <= max_strength)
