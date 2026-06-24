@@ -28,6 +28,9 @@ def get_project_paths(project_root=None):
         'huxt_figures' : project_root / 'HUXt' / 'figures',
         'torch_model_weights': project_root / 'storm_regression' / 'src' / 'torch_model_weights',
         'preds_and_targets': project_root / 'storm_regression' / 'src' / 'figures' / 'preds_and_targets',
+        'regression_results': project_root / 'storm_regression' / 'results',
+        'regression_metrics': project_root / 'storm_regression' / 'metrics',
+        'regression_figures': project_root / 'storm_regression' / 'figures',
     }
 
     return paths
